@@ -6,6 +6,7 @@ Something about firewalls
 - [Run](#run)
 - [Files](#files)
 - [Outstanding Issues](#outstanding-issues)
+- [Resources](#resources)
 
 # Setup
 
@@ -92,7 +93,7 @@ The UI doesn't work for now. See the [issues section](#outstanding-issues) for e
 
 ## firewall.py 
 
-Code borrowed heavily from online resources. 
+Code borrowed heavily from [this page](https://carloalbertoscola.it/2019/network/sdn/python/software-defined-networking-nfv-example-with-pox-click-openflow/). Just a placeholder for learning how firewall modules should be registered with the POX core. 
 
 Theoretically, the finished project should allow button clicks to change rules or create new ones in firewall modules like this. Or maybe even create and register new ones entirely. 
 
@@ -141,3 +142,21 @@ https://noxrepo.github.io/pox-doc/html/#tk
 The official documentation has nothing on how to use the `core.tk` endpoint. 
 
 As a last resort, we could consider abandoning POX in favor of some other controller. I chose POX because it's supposedly easy to use, so I don't know how much success we'd see from moving to another controller.
+
+# Resources
+
+- [Random edu slide I found](https://www.comp.nus.edu.sg/~tbma/teaching/cs4226y16_past/tutorial-Mininet-POX.pdf) 
+- [Mininet introduction](https://github.com/mininet/mininet/wiki/Introduction-to-Mininet#openflow-controllers)
+  - There's a block of code under "Openflow Controllers" that doesn't seem to work. Either the controller doesn't start fast enough or there's something fundamentally wrong with how they're passing a remote controller into Mininet constructor like that. 
+- [Pox web interface](https://web.archive.org/web/20150320100849/http://www.noxrepo.org/2012/09/pox-web-interfaces/) 
+  - Outdated and monitor-only. 
+- [Pox web interface source code](https://github.com/MurphyMc/poxdesk)
+  - I was hoping to gleam how this program manages to access POX's core, but there's only 24 hours in a day. 
+- [Mininet Python API reference](http://mininet.org/api/index.html)
+  - **It doesn't have a search function.** Good luck. 
+- [Pox documentation](https://noxrepo.github.io/pox-doc/html/) 
+  - A giant one-page documentation.
+- [some random tutorial](https://carloalbertoscola.it/2019/network/sdn/python/software-defined-networking-nfv-example-with-pox-click-openflow/)
+  - Used a good chunk of this page's code snippet for the firewall class.
+- [threading tkinter](https://www.oreilly.com/library/view/python-cookbook/0596001673/ch09s07.html)
+  - Last resort resource for making Tkinter threaded. 
