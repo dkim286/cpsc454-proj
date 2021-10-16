@@ -89,7 +89,9 @@ On top of that, in the `launch()` callback, it *attempts* to start the UI:
 - `core.tk`: this is SUPPOSED to be POX's entrypoint for Tkinter. I suspect that this is dysfunctional. 
 - `core.tk.do(setup)`: run the UI-drawing logic as defined by the `setup()` function.
 
-The UI doesn't work for now. See the [issues section](#outstanding-issues) for explanation.
+UI code was borrowed heavily from [pox/misc/mac_blocker.py](https://github.com/noxrepo/pox/blob/gar-experimental/pox/misc/mac_blocker.py). 
+
+The UI doesn't work at the time of writing. See: [issues section](#ui-doesnt-work).
 
 ## firewall.py 
 
@@ -160,3 +162,7 @@ As a last resort, we could consider abandoning POX in favor of some other contro
   - Used a good chunk of this page's code snippet for the firewall class.
 - [threading tkinter](https://www.oreilly.com/library/view/python-cookbook/0596001673/ch09s07.html)
   - Last resort resource for making Tkinter threaded. 
+- [pox/tk.py](https://github.com/noxrepo/pox/blob/gar-experimental/pox/tk.py)
+  - Tkinter endpoint for POX.
+- [pox/misc/mac_blocker.py](https://github.com/noxrepo/pox/blob/gar-experimental/pox/misc/mac_blocker.py)
+  - A module that *should* spawn a tkinter dialog for blocking packets. 
