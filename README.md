@@ -20,7 +20,7 @@ Set up VirtualBox's shared folder if you haven't already.
 
 Clone the repository in that shared folder: 
 
-```sh
+```
 $ cd /path/to/your/shared/folder
 $ git clone <URL to this repo> 
 ```
@@ -33,7 +33,7 @@ Note: don't forget to run `mount -t vboxsf <shared folder name> /path/to/folder`
 
 POX doesn't like running modules by filenames. For example, if you wanted to run `~/pox/pox/forwarding/l2_learning.py` (built-in layer-2 learning switch), then you'd have to do the following:
 
-```sh
+```
 $ ~/pox/pox.py forwarding.l2_learning
 ```
 
@@ -41,13 +41,13 @@ Note that you don't have to do this if the module in question does not touch POX
 
 To enable similar behavior with this project, create a symbolic link `~/pox/pox/project` and point it to the repository:
 
-```sh
+```
 $ ln -s /path-to-shared-folder/repo-folder-name ~/pox/pox/project
 ```
 
 The above symlink allows for POX invocations like this: 
 
-```sh
+```
 $ ~/pox/pox.py project.ctrltest
 ```
 
@@ -57,7 +57,7 @@ Start `LXTerminal` in the Mininet VM.
 
 First, start the controller: 
 
-```sh
+```
 $ ~/pox/pox.py project.ctrltest
 POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
 WARNING:version:Support for Python 3 is experimental.
@@ -66,7 +66,7 @@ INFO:core:POX 0.7.0 (gar) is up.
 
 Then, start the test topology: 
 
-```sh
+```
 $ sudo python ~/pox/pox/project/topotest.py
 mininet> 
 ```
@@ -106,7 +106,7 @@ First attempt at spawning a user interface. I forgot to consider that an idle UI
 
 Whenever the controller is started, this message shows up: 
 
-```sh
+```
 $ ~/pox/pox.py project.ctrltest
 POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
 WARNING:version:Support for Python 3 is experimental.
@@ -118,7 +118,7 @@ That's definitely the UI component sitting idle doing nothing. Thus, there's no 
 
 The UI spawning code is ripped straight out of `~/pox/pox/misc/mac_blocker.py` and I was reasonably confident that it should work. So, I tried running `mac_blocker` to see if it does: 
 
-```sh
+```
 $ ~/pox/pox.py forwarding.l2_learning misc.mac_blocker
 POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
 WARNING:version:Support for Python 3 is experimental.
